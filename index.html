@@ -1,19 +1,29 @@
 <!-- https://www.youtube.com/watch?v=zeEhKU1LY0Q  5:05 -->
- 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>Adicione sua Tarefa</p>
     <input id="entrada" type="text">
-    <button>Salvar</button>
+    <button onclick="salvarDados()">Salvar</button>
     <br>
     <p>Tarefas a Fazer</p>
     <div id="resultados"></div>
-    
+
+    <script>
+        function salvarDados() {
+            let entrada = document.getElementById("entrada").value
+            console.log(entrada)
+        }
+    </script>
+
 </body>
+
 </html>
