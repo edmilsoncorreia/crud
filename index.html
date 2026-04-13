@@ -15,15 +15,36 @@
     <button onclick="salvarDados()">Salvar</button>
     <br>
     <p>Tarefas a Fazer</p>
-    <div id="resultados"></div>
+    <div>
+        <ul id="resultados">
+        <li></li>
+        </ul>
+    </div>
+    
 
     <script>
+        let listaDeTarefas = [];
+        console.log(listaDeTarefas);
+
         function salvarDados() {
-            let entrada = document.getElementById("entrada").value
-            console.log(entrada)
-        }
+            let entrada = document.getElementById("entrada").value;
+            listaDeTarefas.push(entrada);
+
+            mostrarDados();
+            console.log(listaDeTarefas)
+        };
+
+        function mostrarDados(){
+            let ul = document.getElementById("resultados");
+            let html = "";
+            listaDeTarefas.forEach(elemento =>{
+                html += `<li>${elemento}</li>`;
+                ul.innerHTML = html;
+            });
+        };
     </script>
 
 </body>
+
 
 </html>
