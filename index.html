@@ -24,14 +24,19 @@
 
     <script>
         let listaDeTarefas = [];
+        let index = 0;
         console.log(listaDeTarefas);
 
         function salvarDados() {
             let entrada = document.getElementById("entrada").value;
-            listaDeTarefas.push(entrada);
+            let entradaObj = {
+                id: index,
+                texto: entrada
+            };
+            index++;
+            listaDeTarefas.push(entradaObj);
 
             mostrarDados();
-            console.log(listaDeTarefas)
         };
 
         function mostrarDados(){
@@ -42,6 +47,10 @@
                 ul.innerHTML = html;
             });
         };
+
+        function editarDados(){
+
+        }
     </script>
 
 </body>
