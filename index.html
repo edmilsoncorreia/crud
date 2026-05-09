@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD</title>
 </head>
 
 <body>
@@ -15,10 +15,9 @@
     <button onclick="salvarDados()">Salvar</button>
     <br>
     <p>Tarefas a Fazer</p>
+    <div id="editar"></div>
     <div>
-        <ul id="resultados">
-        <li></li>
-        </ul>
+        <ul id="resultados"></ul>
     </div>
     
 
@@ -43,12 +42,17 @@
             let ul = document.getElementById("resultados");
             let html = "";
             listaDeTarefas.forEach(elemento =>{
-                html += `<li>${elemento}</li>`;
+                html += `<li}>
+                    ${elemento.texto} <button onclick="editarDados(${elemento.id})">Editar</button> 
+                    </li>`;
                 ul.innerHTML = html;
             });
         };
 
-        function editarDados(){
+        function editarDados(id){
+            let resultado = listaDeTarefas.find(obj => obj.id === id)
+            let html = 
+            console.log(resultado);
 
         }
     </script>
